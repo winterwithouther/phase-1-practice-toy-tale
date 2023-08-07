@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 6
     },
     {
       "id": 2,
@@ -51,7 +51,7 @@
     {
       "name": "Lotso",
       "image": "https://static.wikia.nocookie.net/disneyvillains/images/0/0a/Lots-O%27-Huggin%27-Bear.jpg/revision/latest?cb=20120430123626",
-      "likes": 0,
+      "likes": 13,
       "id": 9
     }
   ]

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toyFormContainer = document.querySelector(".container");
   const toyContainer = document.querySelector("#toy-collection");
   const addToyForm = document.querySelector(".add-toy-form");
+  
 
   addBtn.addEventListener("click", () => {
     // hide & seek with the form
@@ -25,6 +26,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const toyLikes = document.createElement("p");
     const likeBtn = document.createElement("button");
 
+    likeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      let amountOfLikes = toy["likes"];
+      const usingId = toy["id"];
+      fetch(`${url}/${usingId}`, {
+        method: "PATCH",
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify({
+          likes: toy["likes"] + 1
+        })
+      })
+    })
+
     toyCard.className = "card"
     toyImg.className = "toy-avatar";
     likeBtn.className = "like-btn";
@@ -33,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
     toyName.textContent = toy["name"];
     toyImg.src = toy["image"];
     toyLikes.textContent = toy["likes"];
-
+    
     toyCard.append(toyName);
     toyCard.append(toyImg);
     toyCard.append(toyLikes);
