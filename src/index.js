@@ -34,10 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "PATCH",
         headers: {"content-type": "application/json"},
         body: JSON.stringify({
-          likes: toy["likes"] + 1
+          likes: toy["likes"] += 1
         })
       })
     })
+    // .then(response => response.json())
+    // .then(data => {
+    //   toyLikes.textContent = data["likes"];
+    // })
 
     toyCard.className = "card"
     toyImg.className = "toy-avatar";
